@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const auth = require('./middleware/auth');
 const bodyParser = require('body-parser');
 const Product = require('./models/Product');
 
@@ -15,7 +16,7 @@ mongoose.connect('mongodb://mongo-product:27017/productdb', {
   .catch(err => console.error(err));
 
 // CREATE
-app.post('/products', async (req, res) => {
+app.post('/products', auth, async (req, res) => {
   try {
     const product = await Product.create(req.body);
     res.status(201).json(product);
