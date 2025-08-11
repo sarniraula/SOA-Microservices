@@ -15,7 +15,7 @@ spec:
         app: order-service
     spec:
       containers:
-      - name: order
+      - name: soa-order-service
         image: ghcr.io/YOUR_GITHUB_USER/soa-order-service:latest
         ports:
           - containerPort: 3001
