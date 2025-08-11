@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: user
-        image: ghcr.io/YOUR_GITHUB_USER/soa-user-service:latest
+        image: ghcr.io/sarniraula/soa-user-service:latest
         ports:
           - containerPort: 3001
         env:
